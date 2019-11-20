@@ -16,8 +16,8 @@ function MatchHistory () {
       .then(response => response.data)
       .then(data => setData(data))
   }, [])
-  console.log('welp', data)
-  data.map(joey => console.log(joey))
+  // console.log('welp', data)
+  // data.map(joey => console.log(joey))
 
   useEffect(() => {
     // if (data[0] !== undefined) {
@@ -25,8 +25,8 @@ function MatchHistory () {
     // axios.get(`https://americas.api.riotgames.com/tft/match/v1/matches/${empty}?api_key=${todaysKey}`)
     axios.get(`https://americas.api.riotgames.com/tft/match/v1/matches/NA1_3210019316?api_key=RGAPI-1c4c79f7-c60d-4209-b8f5-fe5332213cdf`)
       .then(response => response.data)
-      .then(matchOne => setMatch(matchOne))
-    console.log('ma2', matchOne)
+      .then(data => setMatch(data))
+
     // }
   }, [])
   console.log('ma', matchOne)
@@ -34,9 +34,9 @@ function MatchHistory () {
   return <div>
 
     <h1>Matches</h1>
-    {matchOne.map((match, id) => {
+    {/* {matchOne.map((match, id) => {
       return <p key={id}>{match}</p>
-    })}
+    })} */}
   </div>
 }
 
