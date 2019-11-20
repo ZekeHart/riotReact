@@ -20,15 +20,16 @@ function MatchHistory () {
   data.map(joey => console.log(joey))
 
   useEffect(() => {
-    if (data[0] !== undefined) {
-      const empty = data[0]
-
-      axios.get(`https://americas.api.riotgames.com/tft/match/v1/matches/${empty}?api_key=${todaysKey}`)
-        .then(response => response.data)
-        .then(data => setMatch(data))
-    }
+    // if (data[0] !== undefined) {
+    //   const empty = data[0]
+    // axios.get(`https://americas.api.riotgames.com/tft/match/v1/matches/${empty}?api_key=${todaysKey}`)
+    axios.get(`https://americas.api.riotgames.com/tft/match/v1/matches/NA1_3210019316?api_key=RGAPI-1c4c79f7-c60d-4209-b8f5-fe5332213cdf`)
+      .then(response => response.data)
+      .then(matchOne => setMatch(matchOne))
+    console.log('ma2', matchOne)
+    // }
   }, [])
-  console.log(matchOne)
+  console.log('ma', matchOne)
 
   return <div>
 
